@@ -17,7 +17,7 @@ const pets = [
 ];
 
 
-skip('should return all names', (expect) => {
+test('should return all names', (expect) => {
     //Arrange
     // Set up your arguments and expectations
     const expected = ['scooter', 'sassy', 'legzo', 'fluff'];

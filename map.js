@@ -19,7 +19,8 @@ Output:
 */
 
 export function makeArrayOfNamesWithMap(arr) {
-    return [];
+    // use map to return an array with the pets names
+    return arr.map(item => item.name);
 }
 
 /*
@@ -33,6 +34,8 @@ Output:
 ]*/
 
 export function makeArrayWithIsHungry(arr) {
+    
+
     return [];
 }
 
