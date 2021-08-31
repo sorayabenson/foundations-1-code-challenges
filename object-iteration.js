@@ -46,11 +46,14 @@ export function makeMoreScreamingKeys(someObject) {
     let scream = {}
 
     const keys = Object.keys(someObject);
-    const values = Object.values(someObject);
+    // const values = Object.values(someObject);
+    
+    // same thing:
+    // for(let i = 0; i < keys.length; i++) {
+    //     scream[keys[i].toUpperCase()] = values[i];
+    // }
 
-    for(let i = 0; i < keys.length; i++) {
-        scream[keys[i].toUpperCase()] = values[i];
-    }
+    keys.forEach(key => scream[key.toUpperCase()] = someObject[key]);
 
     return scream;
 }
@@ -69,11 +72,14 @@ export function makeTuples(someObject) {
     let tuples = []
 
     const keys = Object.keys(someObject);
-    const values = Object.values(someObject);
+    // const values = Object.values(someObject);
 
-    for(let i = 0; i < keys.length; i++) {
-        tuples.push([keys[i], values[i]]);
-    }
+    // for(let i = 0; i < keys.length; i++) {
+    //     tuples.push([keys[i], values[i]]);
+    // }
+
+    // same thing:
+    keys.forEach(key => tuples.push([key, someObject[key]]));
 
     return tuples;
 }

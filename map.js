@@ -34,9 +34,17 @@ Output:
 ]*/
 
 export function makeArrayWithIsHungry(arr) {
+    // use map to add isHungry: true to each object
+    let hungryPets = [];
     
-
-    return [];
+    hungryPets = arr.map((item) =>  { 
+        return {
+            isHungry: true, 
+            name: item.name,
+            type: item.type,
+        }});
+    
+    return hungryPets;
 }
 
 /*
@@ -50,7 +58,18 @@ Output:
 ]*/
 
 export function makeShoutingArray(arr) {
-    return [];
+    // map through arr to capitalize name
+
+    let shouts = [];
+
+    shouts = arr.map(item => {
+        return {
+            name: item.name.toUpperCase(),
+            type: item.type,
+        }
+    })
+
+    return shouts;
 }
 
 
@@ -61,7 +80,14 @@ Output:
 */
 
 export function makeStringArray(arr) {
-    return [];
+    // map through arr
+    // return each object's values as string
+
+    let strings = [];
+
+    strings = arr.map(item => `${item.name}${item.type}`);
+
+    return strings;
 }
 
 /*
@@ -87,5 +113,18 @@ Output:
 */
 
 export function makeArrayOfArraysOfArrays(arr) {
-    return [];
+    // map through arr
+    // turn each object into its own array that holds a mini array [key, value] as strings
+    let arrayArray = [];
+
+    arrayArray = arr.map(item => {
+        let miniArray = [
+            ['name', `${item.name}`],
+            ['type', `${item.type}`]
+        ];
+
+        return miniArray;
+    })
+
+    return arrayArray;
 }
