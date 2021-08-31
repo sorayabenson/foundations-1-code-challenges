@@ -28,7 +28,7 @@ Input:
         quantity: 1,
         category: 'dairy'
     },
-        { 
+    { 
         id: 'cheese',
         price: 4,
         quantity: 4,
@@ -50,7 +50,16 @@ Output:
 */
 
 export function organizePricesByKey(arr) {
-    return {};
+    // return an object with key = id : value = price;
+    // loop through arr to find them
+
+    let prices = {};
+
+    arr.forEach(item => {
+        prices[item.id] = item.price;
+    })
+
+    return prices;
 }
 
 /*
@@ -90,7 +99,14 @@ Output:
 */
 
 export function makeAHashMap(arr) {
-    return {};
+    // return an object that where key = id && value = and object with the original information
+    let megaObject = {}
+
+    arr.forEach(item => {
+        megaObject[item.id] = item;
+    })
+
+    return megaObject;
 }
 
 
@@ -104,5 +120,16 @@ Output:
 */
 
 export function countByCategory(arr) {
-    return {};
+    // return an object where key = category && value = number of times category is used in arr
+    let categories = {};
+
+    arr.forEach(item => {
+        if(!categories[item.category]){
+            categories[item.category] = 1;
+        } else {
+            categories[item.category] = categories[item.category] + 1;
+        }
+    })
+    
+    return categories;
 }

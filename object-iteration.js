@@ -1,4 +1,4 @@
-// user Object.values and Object.key to solve these problems!
+// use Object.values and Object.key to solve these problems!
 
 /*
 Input: 
@@ -24,7 +24,12 @@ etc
 */
 
 export function makeWeirdStringFromKeys(someObject) {
-    return '';
+    //get keys in an array
+    //return joined array
+
+    const keys = Object.keys(someObject);
+
+    return keys.join('');
 }
 
 
@@ -38,7 +43,19 @@ Output:
 */
 
 export function makeMoreScreamingKeys(someObject) {
-    return {};
+    let scream = {}
+
+    const keys = Object.keys(someObject);
+    // const values = Object.values(someObject);
+    
+    // same thing:
+    // for(let i = 0; i < keys.length; i++) {
+    //     scream[keys[i].toUpperCase()] = values[i];
+    // }
+
+    keys.forEach(key => scream[key.toUpperCase()] = someObject[key]);
+
+    return scream;
 }
 
 /*
@@ -51,5 +68,18 @@ Output:
 */
 
 export function makeTuples(someObject) {
-    return [];
+    // return an array with an array for each key value pair
+    let tuples = []
+
+    const keys = Object.keys(someObject);
+    // const values = Object.values(someObject);
+
+    // for(let i = 0; i < keys.length; i++) {
+    //     tuples.push([keys[i], values[i]]);
+    // }
+
+    // same thing:
+    keys.forEach(key => tuples.push([key, someObject[key]]));
+
+    return tuples;
 }
